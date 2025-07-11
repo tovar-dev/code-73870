@@ -1,0 +1,13 @@
+.cart-widget {
+    display: flex;
+    justify-content: row;
+}
+
+.cart-widget > span {
+    color: red;
+}
+
+.cart-widget-img {
+    background-color: black;
+    color: white;
+}
