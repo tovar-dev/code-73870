@@ -2,6 +2,43 @@ body {
   margin: 0;
 }
 
+.btn-primary {
+  background-color: #C6452A;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #A63422;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #C6452A;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #C6452A;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.color-discount {
+  color: #C6452A;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -1,16 +1,18 @@
 .item-detail {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-evenly;
+    max-width: none;
 }
 
-.item-detail>img {
-    max-width: 50%;
-    height: 50%;
+.item-detail-img {
+    width: 300px;
+    height: 300px;
     border-radius: 8px;
 }
 
@@ -22,7 +24,6 @@
 }
 
 .item-discount> :first-child {
-    color: red;
     font-weight: bold;
 }
 

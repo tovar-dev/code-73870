@@ -19,7 +19,9 @@ const NavBar = () => {
             <NavLink to="/categories/ensaladas">
                 Ensaladas
             </NavLink>
-            <CartWidget />
+            <NavLink to="/cart">
+                <CartWidget />
+            </NavLink>
         </nav>
     )
 };
