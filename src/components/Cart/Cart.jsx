@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext';
 import './Cart.css';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Cart = () => {
   const { cart, clearCart, getDiscountProducts, getSubtotal, getTotal } = useContext(CartContext);
@@ -17,9 +18,28 @@ const Cart = () => {
   };
 
   const handleClearCart = () => {
-    if (window.confirm('¿Estás seguro de que deseas limpiar el carrito?')) {
-      clearCart();
-    }
+
+    Swal.fire({
+      title: '¿Estás seguro de que deseas limpiar el carrito?',
+      text: "Esta acción no se puede deshacer.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#c2c2c2ff',
+      cancelButtonColor: '#C6452A',
+      confirmButtonText: 'Sí, limpiar carrito',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire({
+          title: '¡Carrito limpiado!',
+          text: 'Tu carrito ha sido vaciado.',
+          icon: 'success',
+          confirmButtonColor: '#C6452A',
+          timer: 2000
+        })
+      }
+    });
   };
 
   return (

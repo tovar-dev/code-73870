@@ -3,7 +3,7 @@ import { getProducts } from "../../mock/AsyncService";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../service/Firebase";
 
 const ItemListContainer = ({ title }) => {
@@ -26,23 +26,6 @@ const ItemListContainer = ({ title }) => {
                 setLoading(false);
             });
     }, [category]);
-
-    // useEffect(() => {
-    //     setLoading(true);
-    //     getProducts()
-    //         .then(response => {
-    //             if (category) {
-    //                 const filteredItems = response.filter(item => item.category === category);
-    //                 setItems(filteredItems);
-    //             } else {
-    //                 setItems(response);
-    //             }
-    //         })
-    //         .catch(err => { console.error(err) })
-    //         .finally(() => {
-    //             setLoading(false);
-    //         });
-    // }, [category]);
 
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', padding: '1rem', borderRadius: '0.5rem' }}>

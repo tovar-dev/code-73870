@@ -7,7 +7,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../service/Firebase';
 
 const ItemDetailContainer = () => {
-    
+
     const [detail, setDetail] = useState({});
     const [loading, setLoading] = useState(false);
 
@@ -17,33 +17,23 @@ const ItemDetailContainer = () => {
         setLoading(true);
         const producRef = doc(db, 'products', id);
         getDoc(producRef)
-        .then((doc) => {
-            if (doc.exists()) {
-                setDetail({ id: doc.id, ...doc.data() });
-            } else {
-                console.error("No such document!");
-            }
-        })
-        .catch(err => { console.error(err) })
-        .finally(() => {
-            setLoading(false);
-        });
-    },[]);
-
-    // useEffect(() => {
-    //     setLoading(true);
-    //     getProductById(id)
-    //         .then(response => { setDetail(response) })
-    //         .catch(err => { console.error(err) })
-    //         .finally(() => {
-    //             setLoading(false);
-    //         });
-    // }, []);
+            .then((doc) => {
+                if (doc.exists()) {
+                    setDetail({ id: doc.id, ...doc.data() });
+                } else {
+                    console.error("No such document!");
+                }
+            })
+            .catch(err => { console.error(err) })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, []);
 
     const updateStock = (quantity) => {
         setDetail(prevDetail => ({
             ...prevDetail,
-            stock: prevDetail.stock - quantity
+            stock: prevDetail.stock
         }));
     };
 

@@ -20,7 +20,6 @@ const ItemCount = ({ stock, onAdd, addedNewItem }) => {
 
     const addCount = () => {
         setCount(0);
-        console.log(`Cantidad agregada: ${count}`);
         onAdd(count)
     };
 
@@ -32,7 +31,7 @@ const ItemCount = ({ stock, onAdd, addedNewItem }) => {
 
     return (
         <div className='counter-container'>
-            <div>
+            <div className={`counter-section-added${addedNewItem || stock <= 0 ? '' : ' visible'}`}>
                 <button onClick={handleAdd} className='btn-secondary'>+</button>
                 <span>{count}</span>
                 <button onClick={handleRemove} className='btn-secondary'>-</button>
@@ -43,7 +42,7 @@ const ItemCount = ({ stock, onAdd, addedNewItem }) => {
                     Comprar
                 </button>
             </div>
-            <div className={`counter-section-added${addedNewItem ? ' visible' : ''}`}>
+            <div className={`counter-section-added${addedNewItem || stock == 0 ? ' visible' : ''}`}>
                 <Link to="/cart" className='btn-primary cursor-pointer'>
                     Ir al carrito
                 </Link>

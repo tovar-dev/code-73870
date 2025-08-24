@@ -9,6 +9,7 @@ import NotFound from './components/NotFound/NotFound'
 import { CartProvider } from './context/CartContext'
 import CartView from './components/Cart/CartView'
 import Checkout from './components/Checkout/Checkout'
+import Success from './components/Success/Success'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartView />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/success" element={<Checkout />} />
+            <Route path="/success/:orderId" element={<Success />} />
             {/* Catch-all route for 404 Not Found */}
             <Route path='*' element={<NotFound />} />
           </Routes>

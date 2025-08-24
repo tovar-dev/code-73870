@@ -39,6 +39,10 @@ body {
   color: #C6452A;
 }
 
+:root {
+  background-color: rgb(95, 92, 92);
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
