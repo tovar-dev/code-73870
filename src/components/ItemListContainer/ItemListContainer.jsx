@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../../mock/AsyncService";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../service/Firebase";
 
 const ItemListContainer = ({ title }) => {

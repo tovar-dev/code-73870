@@ -89,9 +89,6 @@ const Success = () => {
                                 <Link to='/' className='btn-primary'>
                                     Seguir comprando
                                 </Link>
-                                {/* <Link to='/mis-ordenes' className='btn-secondary'>
-              Ver mis órdenes
-            </Link> */}
                             </div>
                         </div>
                     </div>

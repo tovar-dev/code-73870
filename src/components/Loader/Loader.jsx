@@ -5,8 +5,7 @@ import './Loader.css'
 const Loader = () => {
     return (
         <div className='loader-container'>
-            
-        <ClipLoader size={39} />
+            <ClipLoader size={39} />
         </div>
     )
 }
