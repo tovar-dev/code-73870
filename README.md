@@ -2,7 +2,7 @@
 
 Una aplicación de e-commerce desarrollada con React, Vite y Firebase que permite a los usuarios navegar productos, agregar al carrito y realizar compras.
 
-![Dashboard de la aplicación](./dashboard-screenshot.png)
+![Dashboard de la aplicación](./public/dashboard.png)
 
 ## 🚀 Demo en Vivo
 
